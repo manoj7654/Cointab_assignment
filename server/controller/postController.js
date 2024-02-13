@@ -9,6 +9,7 @@ const postModal = require("../modals/postModal")
 const addPost = async(req,res)=>{
     let isFetchingData = false;
     const userId = req.query.userId;
+    console.log(userId)
       try {
   
         // if fetching data in progress then it will throw an error
@@ -21,7 +22,7 @@ const addPost = async(req,res)=>{
           const result=await fetch(`https://jsonplaceholder.typicode.com/posts?userId=${userId}`)
           const data=await result.json()
         
-        //  console.log(data)
+         console.log(data)
 
               let final={
                   id:data[0].id,
@@ -30,7 +31,8 @@ const addPost = async(req,res)=>{
                   body: data[0].body,
                   company: data[0].company.name
               }
-              await postModal.create(final)
+              console.log(final)
+            //   await postModal.create(final)
       res.status(200).json({ message: 'Post data stored in Database successfully.' });
       } catch (error) {
         console.error('Getting Error while fetching  Post:', error);

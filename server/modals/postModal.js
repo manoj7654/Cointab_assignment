@@ -6,8 +6,8 @@ const { connection } = require('../config/db');
 
 
 // define postModal
-const postModal = connection.define('posts', {
-    id:{type:DataTypes.INTEGER},
+const postModal = connection.define('post', {
+    id:{type:DataTypes.INTEGER,primaryKey:true},
     name:{type:DataTypes.STRING},
     title:{type:DataTypes.STRING},
     body:{type:DataTypes.STRING},

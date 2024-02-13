@@ -10,7 +10,8 @@ const { userRouter } = require("./routes/userRouter");
 require("dotenv").config()
 
 // importing cors
-const cors=require("cors")
+const cors=require("cors");
+const { postRouter } = require("./routes/postRouter");
 app.use(cors())
 
 app.get("/",(req,res)=>{
@@ -18,6 +19,8 @@ app.get("/",(req,res)=>{
 })
 
 app.use("/users",userRouter)
+app.use("/post",postRouter)
+
 
 // running server on specific port no and connection to database
 app.listen(process.env.port,async()=>{
