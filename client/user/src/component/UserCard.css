@@ -1,0 +1,28 @@
+.card{
+    height: auto;
+    width: 30%;
+    /* border: 1px solid red; */
+    margin: auto;
+    margin-top: 20px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border-radius: 10px;
+    padding-top: 10px;
+    padding-bottom: 20px;
+
+}
+/* .container{
+    height: auto;
+    width: 80%;
+    border: 1px solid red;
+    margin: auto;
+} */
+.btn{
+    height: 40px;
+    width: 30%;
+    font-size: 1.2rem;
+    background-color: green;
+    color:white;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+}

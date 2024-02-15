@@ -1,0 +1,20 @@
+.main{
+    width: 35%;
+    margin: auto;
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-evenly;
+}
+.btns{
+    height: 40px;
+    width: 30%;
+    font-size: 1.2rem;
+    background-color: green;
+    color:white;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+}
+h1{
+   font-size: 30px;
+}
