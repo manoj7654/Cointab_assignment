@@ -8,27 +8,38 @@ const SingleUser = () => {
     const [isPresent,setIsPresent]=useState(false)
      
     useEffect(()=>{
-        axios.get(`http://localhost:4500/post/getPost?userId=${params.userId}`)
+        axios.get(`https://muddy-bee-gear.cyclic.app/post/getPost?userId=${params.userId}`)
         .then((result)=>{
            console.log(result.data)
            setPost(result.data.data)
        })
-       .then((err)=>{console.log(err)})
+       .catch((err)=>{console.log(err)})
     },[])
 
 function bulkAdd(){
-    axios.post(`http://localhost:4500/post/bulkAdd/${params.userId}`,{data:post})
+    axios.post(`https://muddy-bee-gear.cyclic.app/post/bulkAdd/${params.userId}`,{data:post})
     .then((result)=>{
-        // console.log(result)
-        setIsPresent(result.data.alreadyPresent)
+        // console.log(result.data[0].isPresent)
+        setIsPresent(result.data)
 
     })
-    .then((err)=>{console.log(err)})
+    .catch((err)=>{console.log(err)})
+   }
+
+   function download(){
+    axios.get(`https://muddy-bee-gear.cyclic.app/post/download/${params.userId}`)
+    .then((result)=>{
+        console.log(result)
+        
+        setIsPresent(result.data)
+
+    })
+    .catch((err)=>{console.log(err)})
    }
   return (
     <div>
         {!isPresent&&<button onClick={bulkAdd}>Bulk Add</button>}
-         {isPresent&&<button>Download In Excel</button>}
+         {isPresent&&<button onClick={download}>Download In Excel</button>}
         {post.map((ele)=>{
             return(
                 <div>

@@ -6,7 +6,7 @@ const Home = () => {
     const [user,setUser]=useState([])
     async function fetchData() {
       try {
-        const result = await fetch("http://localhost:4500/users/fetchData",{
+        const result = await fetch("https://muddy-bee-gear.cyclic.app/users/fetchData",{
           method:"GET",
           headers:{
             "Content-Type":"application/json"

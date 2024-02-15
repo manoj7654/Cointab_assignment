@@ -5,13 +5,13 @@ import './UserCard.css';
 
 const UserCard = ({ele,refetch}) => {
     function handleAdd(){
-        axios.post(`http://localhost:4500/users/create/${ele.id}`)
+        axios.post(`https://muddy-bee-gear.cyclic.app/users/create/${ele.id}`)
         .then((result)=>{
        setTimeout(() => {
         refetch()
        }, 500);
     })
-    .then((err)=>{console.log(err)})
+    .catch((err)=>{console.log(err)})
     }
 
 
